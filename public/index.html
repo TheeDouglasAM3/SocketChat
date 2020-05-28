@@ -7,5 +7,18 @@
 </head>
 <body>
     <p>Welcome to SocketChat</p>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        let socket = io();
+
+        socket.on('connect', () => {
+            console.log("connected to server.");
+        })
+
+        socket.on('disconnect', () => {
+            console.log("disconnected from server.");
+        })
+    </script>
 </body>
 </html>
