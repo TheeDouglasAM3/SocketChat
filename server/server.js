@@ -21,9 +21,10 @@ io.on('connection', (socket) => {
     //Broadcast: Todo mundo recebe a mensagem, menos o proprio usuario
     socket.broadcast.emit('newMessage', generateMessage('Admin', 'New user joined!'))
 
-    socket.on('createMessage', (message) => {
+    socket.on('createMessage', (message, callback) => {
         console.log("Create message", message);
         io.emit('newMessage', generateMessage(message.from, message.text));
+        callback('This is the server!');
     })
 
     socket.on('disconnect', () => {
