@@ -10,16 +10,19 @@ socket.on('disconnect', () => {
 
 socket.on('newMessage', message => {
     console.log("newMessage", message)
+    const formattedTime = moment(message.createdAt).format('LT')
     let li = document.createElement('li')
-    li.innerText = `${message.from}: ${message.text}`
+    li.innerText = `${message.from} ${formattedTime}: ${message.text}`
 
     document.querySelector('body').appendChild(li)
 })
 
 socket.on('newLocationMessage', message => {
     console.log("newLocationMessage", message)
+    const formattedTime = moment(message.createdAt).format('LT')
     let li = document.createElement('li')
     let a = document.createElement('a')
+    li.innerText = `${message.from} ${formattedTime}: `
     a.setAttribute('target', '_blank')
     a.setAttribute('href', message.url)
     a.innerHTML = 'My current location'
