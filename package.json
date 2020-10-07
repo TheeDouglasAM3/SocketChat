@@ -24,6 +24,7 @@
   "homepage": "https://github.com/TheeDouglasAM3/SocketChat#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "moment": "^2.29.1",
     "socket.io": "^2.3.0"
   },
   "devDependencies": {
