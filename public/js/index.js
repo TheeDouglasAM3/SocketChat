@@ -16,6 +16,18 @@ socket.on('newMessage', message => {
     document.querySelector('body').appendChild(li)
 })
 
+socket.on('newLocationMessage', message => {
+    console.log("newLocationMessage", message)
+    let li = document.createElement('li')
+    let a = document.createElement('a')
+    a.setAttribute('target', '_blank')
+    a.setAttribute('href', message.url)
+    a.innerHTML = 'My current location'
+    li.appendChild(a)
+
+    document.querySelector('body').appendChild(li)
+})
+
 // socket.emit('createMessage', {
 //     from: 'John',
 //     text: 'Hey'
@@ -32,5 +44,19 @@ document.querySelector('#submit-btn').addEventListener('click', event => {
         text: message
     }, () => {
 
+    })
+})
+
+document.querySelector('#send-location').addEventListener('click', event => {
+    if(!navigator.geolocation)
+        return alert('Geolocation is not support by your browser.')
+
+    navigator.geolocation.getCurrentPosition(position => {
+        socket.emit('createLocationMessage', {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+        })
+    }, () => {
+        alert('Unable to fetch location.')
     })
 })
