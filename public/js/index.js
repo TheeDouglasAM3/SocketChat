@@ -18,7 +18,7 @@ socket.on('newMessage', message => {
     })
     let div = document.createElement('div')
     div.innerHTML = html
-    document.querySelector('body').appendChild(div)
+    document.querySelector('.display-messages-area').appendChild(div)
 })
 
 socket.on('newLocationMessage', message => {
@@ -31,7 +31,7 @@ socket.on('newLocationMessage', message => {
     })
     let div = document.createElement('div')
     div.innerHTML = html
-    document.querySelector('body').appendChild(div)
+    document.querySelector('.display-messages-area').appendChild(div)
 })
 
 // socket.emit('createMessage', {

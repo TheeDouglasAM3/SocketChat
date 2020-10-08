@@ -3,23 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Chat Online Practice</title>
 </head>
 <body>
-    <p>Welcome to SocketChat</p>
+    <div class="container">
 
-    <form id="message-form">
-        <input type="text" name="message" placeholder="Mensagem">
-        <button type="submit" id="submit-btn">Submit</button>
-    </form>
+        <div class="display-messages-area">
 
-    <button type="button" id="send-location">Send Location</button>
+        </div>
+    
+    </div>
 
+    <div class="send-message-area">
+        <form id="message-form">
+            <input type="text" name="message" id="send-message-input" class="message-input" placeholder="Mensagem">
+            <button type="submit" class="btn-msg" id="submit-btn">Submit</button>
+            <button type="button" class="btn-location" id="send-location">Send Location</button>
+        </form>
+    </div>
+    
     <script id="message-template" type="text/template">
         <li class="message">
             <div class="message__title">
-                <h4>{{from}}</h4>
-                <span>{{createdAt}}</span>
+                <span><strong>{{from}}</strong> {{createdAt}}</span>
             </div>
             <div class="message__body">
                 <p>{{text}}</p>
