@@ -1,5 +1,10 @@
 let socket = io();
 
+function scrollToBottom() {
+    let messages = document.querySelector('#messages').lastElementChild
+    messages.scrollIntoView()
+}
+
 socket.on('connect', () => {
     console.log("connected to server.");
 })
@@ -19,6 +24,8 @@ socket.on('newMessage', message => {
     let div = document.createElement('div')
     div.innerHTML = html
     document.querySelector('#messages').appendChild(div)
+    
+    scrollToBottom()
 })
 
 socket.on('newLocationMessage', message => {
@@ -32,6 +39,8 @@ socket.on('newLocationMessage', message => {
     let div = document.createElement('div')
     div.innerHTML = html
     document.querySelector('#messages').appendChild(div)
+
+    scrollToBottom()
 })
 
 // socket.emit('createMessage', {
