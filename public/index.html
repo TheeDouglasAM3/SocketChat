@@ -6,46 +6,47 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Chat Online Practice</title>
 </head>
-<body>
-    <div class="container">
+<body class="chat">
 
-        <div class="display-messages-area">
-
-        </div>
-    
+    <div class="chat__sidebar">
+      <h3>People</h3>
+      <div id="users"></div>
     </div>
 
-    <div class="send-message-area">
+    <div class="chat__main">
+      <ol id="messages" class="chat__messages"></ol>
+
+      <div class="chat__footer">
         <form id="message-form">
-            <input type="text" name="message" id="send-message-input" class="message-input" placeholder="Mensagem">
-            <button type="submit" class="btn-msg" id="submit-btn">Submit</button>
-            <button type="button" class="btn-location" id="send-location">Send Location</button>
+          <input name="message" type="text" placeholder="Message" autofocus autocomplete="off"/>
+          <button id="submit-btn">Send</button>
         </form>
+        <button id="send-location">Send location</button>
+      </div>
     </div>
-    
+
     <script id="message-template" type="text/template">
-        <li class="message">
-            <div class="message__title">
-                <span><strong>{{from}}</strong> {{createdAt}}</span>
-            </div>
-            <div class="message__body">
-                <p>{{text}}</p>
-            </div>
-        </li>
+      <li class="message">
+        <div class="message__title">
+          <h4>{{from}}</h4>
+          <span>{{createdAt}}</span>
+        </div>
+        <div class="message__body">
+          <p>{{text}}</p>
+        </div>
+      </li>
     </script>
 
     <script id="location-message-template" type="text/template">
-        <li class="message">
-            <div class="message__title">
-                <h4>{{from}}</h4>
-                <span>{{createdAt}}</span>
-            </div>
-            <div class="message__body">
-                <p>
-                    <a href="{{url}}" target="_blank">My current location</a>
-                </p>
-            </div>
-        </li>
+      <li class="message">
+        <div class="message__title">
+          <h4>{{from}}</h4>
+          <span>{{createdAt}}</span>
+        </div>
+        <div class="message__body">
+          <a href="{{url}}" target="_blank">My current location</a>
+        </div>
+      </li>
     </script>
 
     <script src="/socket.io/socket.io.js"></script>
