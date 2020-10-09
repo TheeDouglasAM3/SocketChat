@@ -31,6 +31,20 @@ socket.on('disconnect', () => {
     console.log("disconnected from server.");
 })
 
+socket.on('updateUsersList', users => {
+    let ol = document.createElement('ol')
+
+    users.forEach(user => {
+        let li = document.createElement('li')
+        li.innerHTML = user
+        ol.appendChild(li)
+    })
+
+    let usersList = document.querySelector('#users')
+    usersList.innerHTML = ''
+    usersList.appendChild(ol)
+})
+
 socket.on('newMessage', message => {
     const formattedTime = moment(message.createdAt).format('LT')
     const template = document.querySelector('#message-template').innerHTML;
@@ -73,11 +87,12 @@ document.querySelector('#submit-btn').addEventListener('click', event => {
     const message = document.querySelector('input[name="message"]').value 
 
     socket.emit('createMessage', {
-        from: 'User',
         text: message
     }, () => {
 
     })
+
+    document.querySelector('input[name="message"]').value = ''
 })
 
 document.querySelector('#send-location').addEventListener('click', event => {
