@@ -5,8 +5,26 @@ function scrollToBottom() {
     messages.scrollIntoView()
 }
 
+function getParamsURLInAObject() {
+    const searchQuery = window.location.search.substring(1)
+    const paramsFormatted = decodeURI(searchQuery)
+        .replace(/&/g, '","')
+        .replace(/\+/g, ' ')
+        .replace(/=/g,'":"')
+    return JSON.parse(`{"${paramsFormatted}"}`)
+}
+
 socket.on('connect', () => {
-    console.log("connected to server.");
+    const params = getParamsURLInAObject()
+    
+    socket.emit('join', params, error => {
+        if(error) {
+            alert(error)
+            window.location.href = '/'
+        }else{
+            console.log('Sem erros')
+        }
+    })
 })
 
 socket.on('disconnect', () => {
