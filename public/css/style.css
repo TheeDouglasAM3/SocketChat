@@ -28,18 +28,18 @@ h3 {
 }
 
 button {
-  background: #265f82;
+  background: #404040;
   cursor: pointer;
   transition: background .3s ease
 }
 
 button:hover {
-  background: #1F4C69
+  background: #252525
 }
 
 button:disabled {
   cursor: default;
-  background: #698ea5
+  background: #707070
 }
 
 .centered-form {
@@ -48,12 +48,12 @@ button:disabled {
   height: 100vh;
   width: 100vw;
   justify-content: center;
-  background: -moz-linear-gradient(125deg, rgba(39, 107, 130, 1) 0, rgba(49, 84, 129, 1) 100%);
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(0, rgba(49, 84, 129, 1)), color-stop(100%, rgba(39, 107, 130, 1)));
-  background: -webkit-linear-gradient(125deg, rgba(39, 107, 130, 1) 0, rgba(49, 84, 129, 1) 100%);
-  background: -o-linear-gradient(125deg, rgba(39, 107, 130, 1) 0, rgba(49, 84, 129, 1) 100%);
-  background: -ms-linear-gradient(125deg, rgba(39, 107, 130, 1) 0, rgba(49, 84, 129, 1) 100%);
-  background: linear-gradient(325deg, rgba(39, 107, 130, 1) 0, rgba(49, 84, 129, 1) 100%)
+  background: -moz-linear-gradient(125deg, #474747 0, #262626 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0, #262626), color-stop(100%, #474747));
+  background: -webkit-linear-gradient(125deg, #474747 0, #262626 100%);
+  background: -o-linear-gradient(125deg, #474747 0, #262626 100%);
+  background: -ms-linear-gradient(125deg, #474747 0, #262626 100%);
+  background: linear-gradient(325deg, #474747 0, #262626 100%)
 }
 
 .centered-form__form {
@@ -91,16 +91,21 @@ button:disabled {
   overflow-y: scroll;
   width: 260px;
   height: 100vh;
-  background: -moz-linear-gradient(125deg, rgba(39, 107, 130, 1) 0, rgba(49, 84, 129, 1) 100%);
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(0, rgba(49, 84, 129, 1)), color-stop(100%, rgba(39, 107, 130, 1)));
-  background: -webkit-linear-gradient(125deg, rgba(39, 107, 130, 1) 0, rgba(49, 84, 129, 1) 100%);
-  background: -o-linear-gradient(125deg, rgba(39, 107, 130, 1) 0, rgba(49, 84, 129, 1) 100%);
-  background: -ms-linear-gradient(125deg, rgba(39, 107, 130, 1) 0, rgba(49, 84, 129, 1) 100%);
-  background: linear-gradient(325deg, rgba(39, 107, 130, 1) 0, rgba(49, 84, 129, 1) 100%)
+  background: -moz-linear-gradient(125deg, #474747 0, #262626 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0, #262626), color-stop(100%, #474747));
+  background: -webkit-linear-gradient(125deg, #474747 0, #262626 100%);
+  background: -o-linear-gradient(125deg, #474747 0, #262626 100%);
+  background: -ms-linear-gradient(125deg, #474747 0, #262626 100%);
+  background: linear-gradient(325deg, #474747 0, #262626 100%)
 }
 
-.chat__footer, .chat__sidebar li {
+.chat__sidebar li {
   background: #e6eaee;
+  padding: 10px
+}
+
+.chat__footer{
+  background: #111111;
   padding: 10px
 }
 
@@ -127,7 +132,9 @@ button:disabled {
   flex-grow: 1;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
-  padding: 10px
+  padding: 10px;
+  background: #303030;
+  color: white;
 }
 
 .chat__footer {
