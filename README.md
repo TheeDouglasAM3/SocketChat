@@ -32,66 +32,42 @@ Projeto criado seguindo o tutorial de [@webdevjourneyWDJ](https://github.com/web
 * [Licença](#licença)
 
 # Descrição
-Proffy é uma plataforma de estudos online, onde qualquer professor poderá criar um cadastro indicando a matéria que deseja lecionar, o valor que irá cobrar e os horários de disponibilidade. Por outro lado, os alunos poderão filtrar os professores por matéria e disponibilidade, e os mesmos serão listados, e com isso o aluno poderá contatar o professor via whatsapp.
+SocketChat é um chat online, onde os membros podem se reunir em uma sala especifíca para enviarem mensagens em tempo real, onde o conteúdo enviado por lá nunca ficará salvo pelo sistema, com a opção de compartilhamento de endereço pego pelo browser.
 
 # Demonstração da aplicação
 O projeto desenvolvido neste repositório está disponível em: 
-[https://proffy-theedouglasam.vercel.app/](https://proffy-theedouglasam.vercel.app/)
+[https://desolate-eyrie-21556.herokuapp.com/](https://desolate-eyrie-21556.herokuapp.com/)
 
 # Tecnologias
 Neste projeto foram utilizadas as seguintes tecnologias:
 * [NodeJS](https://nodejs.org/en/)
-* [React](https://pt-br.reactjs.org/)
-* [TypeScript](https://www.typescriptlang.org/)
+* [Socket.io](https://github.com/socketio/socket.io)
 
 # Como rodar o projeto
 ```bash
 # Copie o repositório
-$ git clone https://github.com/TheeDouglasAM3/proffy.git
+$ git clone https://github.com/TheeDouglasAM3/SocketChat.git
 ```
 ### Rode o servidor (back-end)
 
 ```bash
-# Vá para a pasta do servidor
-$ cd proffy/server
+# Vá para a pasta principal
+$ cd SocketChat
 
 # Instale as depedencias
 $ npm install
 ou
 $ yarn install
-
-# Rode as migrações do banco de dados
-$ npm run knex:migrate
-ou
-$ yarn knex:migrate
 
 # Rode a aplicação
 $ npm run dev
 ou
 $ yarn dev
 ```
-Acesse o servidor em: http://localhost:3333/
-
-### Rode o website (front-end)
-
-```bash
-# Vá para a pasta web
-$ cd proffy/web
-
-# Instale as depedencias
-$ npm install
-ou
-$ yarn install
-
-# Rode a aplicação
-$ npm start
-ou
-$ yarn start
-```
-Acesse o website em: http://localhost:3000/
+Acesse o servidor em: http://localhost:3000/
 
 # Problemas
-Se você encontrou algum bug, se sinta livre **para criar uma nova issue**  [clicando aqui!](https://github.com/TheeDouglasAM3/proffy/issues). Se você já encontrou a solução para o problema, **faça um pull request**!
+Se você encontrou algum bug, se sinta livre **para criar uma nova issue**  [clicando aqui!](https://github.com/TheeDouglasAM3/SocketChat/issues). Se você já encontrou a solução para o problema, **faça um pull request**!
 
 # Licença
 
