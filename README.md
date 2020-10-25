@@ -1,5 +1,4 @@
 # SocketChat
-
 <p align="center">
    <img src="./.github/logo.png" alt="SocketChat" width="280"/>
 </p>
